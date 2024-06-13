@@ -1,3 +1,11 @@
 {
-  "image": "ghcr.io/andreilgeorgescu/workflow-blog:3"
+  "image": "ghcr.io/andreilgeorgescu/workflow-blog:3",
+  "postAttachCommand": "mkdocs serve",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Documentation",
+      "onAutoForward": "openBrowserOnce"
+    }
+  }
 }
