@@ -11,5 +11,5 @@ jobs:
     with:
       url_suffix: 'linux,git,zsh,visualstudiocode,python'
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
