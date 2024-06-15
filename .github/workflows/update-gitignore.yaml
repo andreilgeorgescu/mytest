@@ -27,6 +27,13 @@ jobs:
         if: steps.git_diff.outputs.changes == 'true'
         run: |
           git commit -m 'Update .gitignore'
+
+      - name: Push changes
+        if: steps.git_diff.outputs.changes == 'true'
+        env:
+          PAT: ${{ secrets.PAT }}
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
           git push origin HEAD:update-gitignore
 
       - name: Create Pull Request
