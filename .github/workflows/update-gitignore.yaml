@@ -33,7 +33,7 @@ jobs:
       - name: Commit changes
         if: env.changes == 'true'
         run: |
-          git commit -m 'Update .gitignore - Automated update'
+          git commit -m 'Update .gitignore [skip ci]'
 
       - name: Fetch and rebase before push
         if: env.changes == 'true'
