@@ -10,3 +10,6 @@ jobs:
     uses: andreilgeorgescu/workflow-dependency-gitignore/.github/workflows/update-gitignore.yaml@main
     with:
       url_suffix: 'linux,git,zsh,visualstudiocode,python'
+    permissions:
+      contents: read
+      packages: write
