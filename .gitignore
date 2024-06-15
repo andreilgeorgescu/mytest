@@ -8,6 +8,9 @@
 
 # Created by git when using merge tools for conflicts
 *.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
 *_BACKUP_*.txt
 *_BASE_*.txt
 *_LOCAL_*.txt
