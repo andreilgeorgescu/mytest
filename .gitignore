@@ -1,22 +1,5 @@
 # Created by https://www.toptal.com/developers/gitignore/api/linux,git,zsh,visualstudiocode,python
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,git,zsh,visualstudiocode,python
-
-### Git ###
-# Created by git for backups. To disable backups in Git:
-# $ git config --global mergetool.keepBackup false
-*.orig
-
-# Created by git when using merge tools for conflicts
-*.BACKUP.*
-*.BASE.*
-*.LOCAL.*
-*.REMOTE.*
-*_BACKUP_*.txt
-*_BASE_*.txt
-*_LOCAL_*.txt
-*_REMOTE_*.txt
-
-### Linux ###
+# Edit at https://www.toptal.com/developers/gitig
 *~
 
 # temporary files which can be created if a process still has a handle open of a deleted file
