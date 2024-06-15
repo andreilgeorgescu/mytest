@@ -7,6 +7,6 @@ on:
 
 jobs:
   call-update-gitignore:
-    uses: ./.github/workflows/update-gitignore.yaml
+    uses: andreilgeorgescu/workflow-dependency-gitignore/.github/workflows/update-gitignore.yaml@main
     with:
       url_suffix: 'linux,git,zsh,visualstudiocode'
