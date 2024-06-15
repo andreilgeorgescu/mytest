@@ -1,16 +1,14 @@
 name: Call Update .gitignore
 
 on:
-  schedule:
-    - cron: '0 0 * * 0' # Runs every Sunday at midnight
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   call-update-gitignore:
     uses: andreilgeorgescu/workflow-dependency-gitignore/.github/workflows/update-gitignore.yaml@main
     with:
-      branch: 'main'
-      commit_message: 'Update .gitignore - Automated update [skip ci]'
-      labels: 'update'
-    secrets:
-      ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
+      branch: main
+      commit_message: Update .gitignore - Automated update [skip ci]
+      labels: update
