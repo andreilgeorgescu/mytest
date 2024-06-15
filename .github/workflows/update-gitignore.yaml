@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-update-gitignore:
-    uses: centralized-repo/.github/workflows/update-gitignore.yml@main
+    uses: andreilgeorgescu/workflow-dependency-gitignore/.github/workflows/update-gitignore.yaml@main
     with:
       branch: 'main'
       commit_message: 'Update .gitignore - Automated update [skip ci]'
