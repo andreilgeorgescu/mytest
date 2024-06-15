@@ -24,27 +24,31 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .gitignore
-          git diff --cached --exit-code || echo "changes=true" >> $GITHUB_ENV
+          if git diff --cached --quiet; then
+            echo "changes=false" >> $GITHUB_ENV
+          else
+            echo "changes=true" >> $GITHUB_ENV
+          fi
 
       - name: Commit changes
-        if: steps.git_diff.outputs.changes == 'true'
+        if: env.changes == 'true'
         run: |
           git commit -m 'Update .gitignore - Automated update'
 
       - name: Fetch and rebase before push
-        if: steps.git_diff.outputs.changes == 'true'
+        if: env.changes == 'true'
         run: |
           git remote set-url origin https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}
           git fetch origin
           git rebase origin/${{ env.BRANCH }} --autostash
 
       - name: Push changes
-        if: steps.git_diff.outputs.changes == 'true'
+        if: env.changes == 'true'
         run: |
           git push origin HEAD:update-gitignore --force
 
       - name: Create Pull Request
-        if: steps.git_diff.outputs.changes == 'true'
+        if: env.changes == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: 'Update .gitignore - Automated update'
